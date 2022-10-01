@@ -19,7 +19,7 @@ export default function Home() {
       <Layout>
         {renderPokemons ? (
           renderPokemons.map((pokemonRender) => {
-            return <Card pokemon={pokemonRender} />;
+            return <Card key={pokemonRender.name} pokemon={pokemonRender} />;
           })
         ) : (
           <div>Cargarndo</div>

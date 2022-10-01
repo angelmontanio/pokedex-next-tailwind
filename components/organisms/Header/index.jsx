@@ -9,6 +9,7 @@ import {
   WrapperMenuHead,
   LogoContainer,
 } from "./styles";
+import Pokeball from "../../molecules/Pokeball";
 
 const Header = () => {
   const { setAmountPokemons, pokemonType, setPokemonType, typesPokemons } =
@@ -18,10 +19,7 @@ const Header = () => {
     <WrapperHeader>
       <WrapperHeaderContainer>
         <LogoContainer>
-          <img
-            src='https://i.pinimg.com/originals/34/c1/e5/34c1e5d371d64a581b1902ec5c4509f4.png'
-            alt=''
-          />
+          <Pokeball/>
         </LogoContainer>
         <WrapperMenuHead>
           <NumberPokemons setAmountPokemons={setAmountPokemons} />
