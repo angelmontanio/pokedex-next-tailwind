@@ -17,7 +17,7 @@ const Pokemon = () => {
 
   return (
     <div>
-      <Card pokemon={pokemon} cardInd={true}/>
+      <Card pokemon={pokemon}/>
     </div>
   );
 };

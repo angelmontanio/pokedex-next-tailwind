@@ -1,7 +1,6 @@
 import {WrapperHabilities, TableHabilities, Celda, TitleCelda, ContentCelda} from "./styles";
 
-export default function Habilities({ pokemonInfo, cardInd = false }) {
-  if(!cardInd){
+export default function Habilities({ pokemonInfo, }) {
     //Habilidades tarjeta general
     return (
       !!pokemonInfo && (
@@ -32,15 +31,6 @@ export default function Habilities({ pokemonInfo, cardInd = false }) {
         </WrapperHabilities>
       )
     )
-  }else{
-    //Habilidades tarjeta general
-    console.log(pokemonInfo)
-    return (
-      <div> 
-        {pokemonInfo.id}
-
-      </div>
-    )
 
   }
-}
+
