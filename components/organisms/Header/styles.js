@@ -1,6 +1,12 @@
 import tw, { styled, css } from "twin.macro";
 
 //------Header-Index--------//
+
+
+export const WrapperMenuHeadContent = styled.header(() => [
+  tw`flex `,
+]);
+
 export const WrapperHeader = styled.div(() => [
   tw` w-full bg-primary m-auto fixed top-0 z-20 left-0 right-0`,
   css`
@@ -41,4 +47,24 @@ export const SelectStyle = styled.select(() => [
   tw`
     bg-primary text-white border border-white h-10 flex items-center mr-2
     `,
+]);
+
+
+//---------InputSearchPokemon---------//
+
+export const WraperInputComponent = styled.div(() => [
+  tw`flex flex-col relative top-0 left-0`,
+]);
+
+export const WraperResultsContainer = styled.div(() => [
+  tw`flex flex-col absolute top-10`,
+]);
+
+
+
+export const WraperResultsItem = styled.div(() => [
+  tw`bg-white border border-gray-400 rounded-md p-2 w-40 hover:bg-gray-200 cursor-pointer hover:border-black`,
+]); 
+export const WraperInput = styled.input(() => [
+  tw`bg-white border border-gray-400 rounded-md p-2 w-40 `,
 ]);

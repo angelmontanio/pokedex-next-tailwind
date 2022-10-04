@@ -8,11 +8,13 @@ import {
   WrapperHeaderContainer,
   WrapperMenuHead,
   LogoContainer,
+  WrapperMenuHeadContent
 } from "./styles";
 import Pokeball from "../../molecules/Pokeball";
+import InputSearchPokemons from "./InputSearchPokemons";
 
 const Header = () => {
-  const { setAmountPokemons, pokemonType, setPokemonType, typesPokemons } =
+  const { setAmountPokemons, pokemonType, setPokemonType, typesPokemons, namesSearch} =
     useContext(PokemonsRenderContext);
 
   return (
@@ -22,6 +24,7 @@ const Header = () => {
           <Pokeball/>
         </LogoContainer>
         <WrapperMenuHead>
+          <WrapperMenuHeadContent>
           <NumberPokemons setAmountPokemons={setAmountPokemons} />
 
           <TypePokemons
@@ -29,8 +32,9 @@ const Header = () => {
             setPokemonType={setPokemonType}
             typesPokemons={typesPokemons}
           />
+          </WrapperMenuHeadContent>
 
-          {/* <input type='text' placeholder='busca tu pokemon' /> */}
+          <InputSearchPokemons namesSearch={namesSearch}/>
         </WrapperMenuHead>
       </WrapperHeaderContainer>
     </WrapperHeader>

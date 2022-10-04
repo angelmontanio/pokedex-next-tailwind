@@ -72,6 +72,7 @@ export function PokemonsRenderProvider({ children }) {
         setPokemonType,
         totalPokemonsNumber,
         typesPokemons,
+        namesSearch,
       }}
     >
       {children}

@@ -4,7 +4,7 @@ import Habilities from "./Habilities";
 import PowerLevels from "./PowerLevels";
 import Evolutions from "./Evolutions";
 import {WrapperCardInfo} from "./styles"
-export default function CardInfo({ pokemonInfo }) {
+export default function CardInfo({ pokemonInfo, cardInd = false }) {
   const [info, setInfo] = useState(0);
   const selectInfo = () => {
     switch (info) {
@@ -13,11 +13,11 @@ export default function CardInfo({ pokemonInfo }) {
       case 2:
         return <PowerLevels />;
       default:
-        return <Habilities pokemonInfo={pokemonInfo} />;
+        return <Habilities pokemonInfo={pokemonInfo} cardInd={cardInd} />;
     }
   };
   return (
-    <WrapperCardInfo>
+    <WrapperCardInfo cardInd={cardInd}>
       {/* <Button
         isLeft
         onClick={() => setInfo((prev) => prev - 1)}

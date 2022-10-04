@@ -1,9 +1,18 @@
-import tw, { styled } from "twin.macro";
+import tw, { styled, css } from "twin.macro";
 
 //-------CardInfo-index----------//
-export const WrapperCardInfo = styled.div`
-  ${tw`px-8 relative bg-white h-52 w-72 m-auto -mt-10 pt-8 z-0 rounded-lg shadow-lg`}
-`;
+export const WrapperCardInfo = styled.div(({cardInd})=>[
+  tw`px-8 relative bg-white h-52 w-72 m-auto -mt-10 pt-8 z-0 rounded-lg shadow-lg`,
+  cardInd && 
+  tw`w-full m-auto mt-36 mt-0 border-none shadow-xl`,
+  cardInd  && 
+  css`
+    max-width: 50%;
+    min-width: 500px;
+    height: 500px;
+  `,
+]);
+
 
 //--------CardInfo-habilities-----//
 export const WrapperHabilities = styled.div`

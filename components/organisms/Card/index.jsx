@@ -1,11 +1,13 @@
 import CardInfo from "../../molecules/CardInfo";
-import tw, { styled, css, theme } from "twin.macro";
+import tw from "twin.macro";
 import { WrapperCardInfo } from "./bg-color-styles";
 import { useEffect, useState } from "react";
 import getOnePokemon from "../../../services/getOnePokemon";
-import { HeaderPokemonName, Text, ImgContainer } from "./styles";
+import { HeaderPokemonName, Text, ImgContainer, Interrogation, Img } from "./styles";
 
-const Card = ({ pokemon }) => {
+
+
+const Card = ({ pokemon, cardInd = false }) => {
   const [pokemonInfo, setPokemonInfo] = useState({});
   useEffect(() => {
     pokemon &&
@@ -17,21 +19,28 @@ const Card = ({ pokemon }) => {
           console.log("error");
         });
   }, [pokemon]);
+  const image = !!pokemonInfo.sprites?.other?.dream_world.front_default || !!pokemonInfo.sprites?.front_default;
 
   return (
-    pokemonInfo && (
-      <WrapperCardInfo type={pokemonInfo?.types?.[0].type?.name}>
-        <HeaderPokemonName>
-          <Text>{pokemonInfo.name}</Text>
+    Object.keys(pokemonInfo).length > 0 && (
+      <WrapperCardInfo type={pokemonInfo?.types?.[0].type?.name} cardInd={cardInd}>
+        <HeaderPokemonName cardInd={cardInd}>
+          <Text cardInd={cardInd}>{pokemonInfo.name}</Text>
         </HeaderPokemonName>
-        <ImgContainer>
-          <img
-            tw='m-auto w-48 h-48'
-            src={pokemonInfo.sprites?.other?.dream_world.front_default}
-            alt=''
-          />
-        </ImgContainer>
-        <CardInfo pokemonInfo={pokemonInfo} />
+        {image ?
+          <ImgContainer cardInd={cardInd}>
+            <Img
+              cardInd={cardInd}
+              src={pokemonInfo.sprites?.other?.dream_world.front_default || pokemonInfo.sprites?.front_default}
+              alt=''
+            />
+          </ImgContainer>
+          :
+          <ImgContainer cardInd={cardInd}>
+            <Interrogation>?</Interrogation>
+          </ImgContainer>
+        }
+        <CardInfo pokemonInfo={pokemonInfo} cardInd={cardInd}/>
       </WrapperCardInfo>
     )
   );
