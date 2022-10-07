@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import getOnePokemon from "../services/getOnePokemon";
 
 const useOnePokemon = (pokemon) => {
-    console.log(pokemon);
   const [pokemonInfo, setPokemonInfo] = useState({});
   useEffect(() => {
     pokemon &&

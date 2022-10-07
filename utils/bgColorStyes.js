@@ -1,9 +1,6 @@
 import tw, { styled, css } from "twin.macro";
-const WrapperCardInfo = styled.div(({ type = false}) => [ 
-  tw`border border-yellow-400 border-8 w-80 h-96 m-3 rounded-lg  pb-8`,
-  css`
-    height: 28rem;
-  `,
+const BgColor = styled.div(({ type = false}) => [ 
+  tw`w-full h-full z-0`,
   type === "normal" &&
   css`
     background: linear-gradient(rgb(115, 82, 89), rgb(186, 112, 127));
@@ -86,4 +83,4 @@ type === "unknown" &&
   `,
 ]);
 
-export { WrapperCardInfo };
+export default BgColor ;

@@ -1,5 +1,12 @@
 import tw, { styled, css } from "twin.macro";
 
+export const WrapperCardInfo = styled.div(({ type = false, from}) => [ 
+  tw`border border-yellow-400 border-8 w-80 h-96 m-3 rounded-lg`,
+  css`
+    height: 28rem;
+  `,
+]);
+
 export const HeaderPokemonName = styled.div(() => [
   tw`h-10 border-b mb-1 flex justify-center items-center `,
 ]);

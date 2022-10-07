@@ -63,7 +63,7 @@ export const WraperResultsContainer = styled.div(() => [
 
 
 export const WraperResultsItem = styled.div(() => [
-  tw`bg-white border border-gray-400 rounded-md p-2 w-40 hover:bg-gray-200 cursor-pointer hover:border-black`,
+  tw`bg-white border border-gray-400 rounded-md p-2 w-40 hover:bg-red-400 cursor-pointer hover:border-black`,
 ]); 
 export const WraperInput = styled.input(() => [
   tw`bg-white border border-gray-400 rounded-md p-2 w-40 `,
